@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SSAFY 학습 플래너</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="planner">
+      <p class="eyebrow">SSAFY LEARNING PLANNER</p>
+      <h1>오늘의 학습 항목</h1>
+      <p class="description">할 일을 추가하고 완료 상태를 관리해 보세요.</p>
+
+      <form id="task-form" class="task-form" novalidate>
+        <label class="sr-only" for="task-input">학습 내용</label>
+        <input id="task-input" type="text" placeholder="예: JavaScript 배열 복습" autocomplete="off" aria-describedby="error-message" />
+        <button type="submit">추가</button>
+      </form>
+      <p id="error-message" class="error-message" role="alert"></p>
+
+      <div class="filters" aria-label="학습 항목 상태 필터">
+        <button type="button" class="filter-button active" data-filter="all">전체</button>
+        <button type="button" class="filter-button" data-filter="active">진행 중</button>
+        <button type="button" class="filter-button" data-filter="completed">완료</button>
+      </div>
+
+      <ul id="task-list" class="task-list" aria-live="polite"></ul>
+    </main>
+
+    <script src="validation.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
+
